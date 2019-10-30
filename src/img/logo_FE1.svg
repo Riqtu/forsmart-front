@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="350px" height="578px" viewBox="0 0 350 578" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>logo_FE1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.366834901 0.716154428 355.86785 0.716154428 355.86785 386.863109 0.366834901 386.863109"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id=".">
+            <g id="logo_FE1" transform="translate(-6.000000, -378.000000)">
+                <g id="Group-3" transform="translate(0.000000, 569.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M47.0999939,341.016001 C15.9354408,310.361522 0.366834901,266.896319 0.366834901,210.631799 L0.366834901,0.716154428 L107.342046,0.716154428 L107.342046,207.382917 C107.342046,267.977759 131.293046,298.274039 179.199603,298.274039 C226.743888,298.274039 250.519448,267.977759 250.519448,207.382917 L250.519448,0.716154428 L355.86785,0.716154428 L355.86785,210.631799 C355.86785,266.896319 340.290131,310.361522 309.134691,341.016001 C277.98153,371.675042 234.306043,387 178.117343,387 C121.928642,387 78.2463194,371.675042 47.0999939,341.016001" id="Fill-1" fill="#D8127D" mask="url(#mask-2)"></path>
+                </g>
+                <polygon id="Fill-5" fill="#D8127D" points="0 589 108 589 108 358 0 358"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
