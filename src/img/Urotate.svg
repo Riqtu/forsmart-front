@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="435px" height="313px" viewBox="0 0 435 313" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>logo_FE1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.322526191 0.631030129 312.883812 0.631030129 312.883812 340.87938 0.322526191 340.87938"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="." transform="translate(-1005.000000, -113.000000)">
+            <g id="logo_FE1" transform="translate(1268.500000, 269.500000) rotate(-270.000000) translate(-1268.500000, -269.500000) translate(1112.000000, 6.000000)">
+                <g id="Group-3" transform="translate(0.000000, 186.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M41.4109497,300.481799 C14.0106544,273.471005 0.322526191,235.172209 0.322526191,185.595461 L0.322526191,0.631030129 L94.3765738,0.631030129 L94.3765738,182.732751 C94.3765738,236.125105 115.434616,262.820277 157.554707,262.820277 C199.356284,262.820277 220.260077,236.125105 220.260077,182.732751 L220.260077,0.631030129 L312.883812,0.631030129 L312.883812,185.595461 C312.883812,235.172209 299.187671,273.471005 271.795389,300.481799 C244.40511,327.496613 206.005032,341 156.603169,341 C107.201306,341 68.795219,327.496613 41.4109497,300.481799" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                </g>
+                <polygon id="Fill-5" fill="#FFFFFF" points="1 204 95 204 95 0 1 0"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
