@@ -59,8 +59,8 @@ const HelloPage = props => {
         </h1>
         <h2>
           <Zoom delay={500}>
-            “10 главных шагов к успешному <br />
-            продвижению в instagram” <br />
+            Самый полный курс по <br />
+            продвижению в Instagram <br />
             <Scroll.Link className="link" to="About" spy={true} smooth={true}>
               <PrettyLinks>
                 <i>Узнать</i>

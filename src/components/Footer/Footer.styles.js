@@ -48,15 +48,18 @@ export const Text = styled.div`
   left: 23%;
   top: 21%;
   line-height: 0.5;
-  h1 {
-    margin: 0;
-    color: white;
-  }
+  vertical-align: middle;
   p {
+    color: white;
     font-size: 15pt;
     font-family: 'Inter';
     color: white;
   }
+  h1 {
+    margin: 0;
+    color: white;
+  }
+
   @media screen and (max-width: 1100px) {
     left: 30%;
   }
@@ -64,6 +67,33 @@ export const Text = styled.div`
     left: 15%;
     h1 {
       font-size: 15pt;
+    }
+  }
+`
+export const Links = styled.a`
+  position: relative;
+  height: 40px;
+  text-decoration: none;
+  p {
+    position: relative;
+    color: white;
+    font-size: 15pt;
+    font-family: 'Inter';
+    color: white;
+    height: 40px;
+    display: grid;
+    align-content: center;
+    left: 10px;
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
+  }
+  img {
+    width: 40px;
+    float: left;
+    @media screen and (max-width: 500px) {
+      margin: 20px;
+      margin-left: 0;
     }
   }
 `

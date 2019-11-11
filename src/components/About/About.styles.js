@@ -4,12 +4,14 @@ export const AboutWrapper = styled.div`
   position: relative;
   width: 100%;
   height: calc(100vh - 250px);
+  min-height: 800px;
   max-height: 1100px;
   overflow: hidden;
   background-color: white;
 
   @media screen and (max-width: 500px) {
-    height: 125vh;
+    height: 145vh;
+    min-height: 700px;
   }
 `
 export const Upath = styled.div`
@@ -96,20 +98,26 @@ export const Text = styled.div`
 `
 export const AdditionBlock = styled.section`
   position: absolute;
-  top: calc(100vh - 150px - 45vh);
+  /* top: calc(100vh - 150px - 45vh); */
+  top: auto;
+  bottom: 0;
   width: 50vw;
   height: 45vh;
   left: 50vw;
   @media screen and (max-width: 1350px) {
-    top: 50%;
+    height: 45vh;
+    /* top: 50%; */
   }
   @media screen and (max-width: 500px) {
-    top: 70%;
+    height: 50vh;
+    /* top: 70%; */
     width: 80vw;
     left: 20vw;
   }
   @media screen and (max-width: 320px) {
-    top: 80%;
+    height: 50vh;
+
+    /* top: 80%; */
     width: 80vw;
     left: 20vw;
   }

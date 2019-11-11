@@ -3,9 +3,10 @@ import styled from 'styled-components'
 export const TeacherWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 210vh;
+  height: auto;
   min-height: 1800px;
   background-color: white;
+  margin-top: -100px;
   @media screen and (max-width: 1200px) {
     min-height: 2600px;
   }
@@ -13,6 +14,7 @@ export const TeacherWrapper = styled.div`
     overflow: hidden;
   }
   @media screen and (max-width: 500px) {
+    height: auto;
     min-height: 1900px;
   }
 `
@@ -54,8 +56,8 @@ export const TeacherWrapperMainBack = styled.div`
     }
 `
 export const Text = styled.div`
-  position: absolute;
-  top: 7%;
+  position: relative;
+  padding-top: 36vh;
   left: 25%;
   color: white;
   h1 {
@@ -86,17 +88,20 @@ export const Text = styled.div`
     }
   }
   @media screen and (max-width: 500px) {
+    padding-top: 16vh;
+    margin-bottom: 10vh;
     left: 10%;
-    top: 5%;
+    top: 10vh;
   }
 `
 export const TeacherBlock = styled.div`
   /* overflow: hidden; */
   position: relative;
   width: 45%;
-  left: 2.5%;
+  left: ${props => (props.center ? 'none' : '4%')};
+  margin-left: ${props => (props.center ? '25%' : '0%')};
   height: 262px;
-  top: 30%;
+  top: 200px;
   float: left;
   margin-bottom: 70px;
   @media screen and (max-width: 1200px) {
@@ -108,23 +113,25 @@ export const TeacherBlock = styled.div`
     left: -2%;
   }
   @media screen and (max-width: 500px) {
+    margin-left: 0;
     left: 0;
     width: 100%;
     height: 150px;
-    top: 20%;
+    top: 100px;
   }
 `
 export const BlockTitle = styled.div`
   position: absolute;
-  top: 0;
+  top: 20px;
   width: 55%;
   left: calc(10% + 250px / 1.3);
   text-align: center;
   h1 {
     margin-top: 0;
     color: #e5fd00;
+    font-size: 13pt;
     @media screen and (max-width: 500px) {
-      font-size: 15pt;
+      font-size: 10pt;
     }
   }
   @media screen and (max-width: 500px) {
@@ -159,6 +166,7 @@ export const BlockCircle = styled.div`
 export const BlockText = styled.div`
   position: absolute;
   width: 50%;
+  max-width: 350px;
   height: 170px;
   top: 45px;
   background: white;
@@ -213,13 +221,15 @@ export const BlockText = styled.div`
 
 export const Footer = styled.div`
   overflow: hidden;
-  position: absolute;
-  width: 50%;
-  top: auto;
-  bottom: 14%;
-  left: 25%;
+  position: relative;
+  width: 100%;
+  top: 200px;
+  float: none;
+  /* bottom: 14%; */
   text-align: center;
   p {
+    width: 50%;
+    margin-left: 25%;
     font-family: 'Inter';
     font-size: 20pt;
     color: white;
@@ -228,18 +238,23 @@ export const Footer = styled.div`
   img {
   }
   @media screen and (max-width: 500px) {
+    top: 100px;
+    /* bottom: 10%; */
     width: 90%;
     left: 5%;
     p {
+      width: 90%;
+      margin-left: 5%;
       font-size: 15pt;
     }
   }
 `
 export const Path = styled.div`
 overflow: hidden;
-  position: absolute;
+  position: relative;
   width: 200%;
   height: 250px;
+  margin-top: 200px;
   top: auto;
   bottom: -30px;
   background-image: url('${require('./../../img/path.svg')}');

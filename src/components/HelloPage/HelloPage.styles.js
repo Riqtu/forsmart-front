@@ -108,7 +108,7 @@ export const Text = styled.div`
     }
   }
   .link {
-    margin-top: 20px;
+    margin-top: 25px;
     position: absolute;
     cursor: pointer;
   }

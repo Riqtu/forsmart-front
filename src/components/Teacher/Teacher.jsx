@@ -11,8 +11,34 @@ import {
   Footer,
   Path
 } from './Teacher.styles'
+import * as data from './teachers.json'
 import LightSpeed from 'react-reveal/LightSpeed'
 import Fade from 'react-reveal/Fade'
+
+let allPosts = data.teachers.map((el, index) => {
+  return (
+    <TeacherBlock center={data.teachers[index].center}>
+      <Fade
+        right={!data.teachers[index].right}
+        left={data.teachers[index].right}
+      >
+        <BlockTitle>
+          <h1>{data.teachers[index].title}</h1>
+        </BlockTitle>
+        <BlockText>
+          <h1>{data.teachers[index].name}</h1>
+          <p>{data.teachers[index].description}</p>
+          <h1>Учим</h1>
+          <p>{data.teachers[index].skills}</p>
+        </BlockText>
+        <BlockCircle
+          background={require('./../../img' + data.teachers[index].photo)}
+        ></BlockCircle>
+      </Fade>
+    </TeacherBlock>
+  )
+})
+
 const Teacher = props => (
   <TeacherWrapper>
     <TeacherWrapperBLueBack />
@@ -23,110 +49,18 @@ const Teacher = props => (
       </LightSpeed>
       <Fade delay={600}>
         <p>
-          Наши преподаватели - наша гордость! Как же мы их любим и как же они
-          любят вас. Научат пользоваться инстаграмом от и до - от А до Я, от
-          начала и до конца. Просто подумайте над этим ч пожалуйста и он станет
-          добрым милым и красивым
+          Скучные занятия - не про Forsmart! Именно поэтому наши преподаватели
+          молодые, задорные, веселые и, конечно (куда ж без этого), настоящие
+          профессионалы в своей области.
         </p>
       </Fade>
     </Text>
-    <TeacherBlock>
-      <Fade left>
-        <BlockTitle>
-          <h1>Дизайн</h1>
-        </BlockTitle>
-        <BlockText>
-          <h1>Елена Козлова</h1>
-          <p>
-            Рассказываю зачем нужен дизайн для инстагрмма, ведь это так круто!!
-            Всякие красивые штучки-дрючки, палочки - кружочки!
-          </p>
-          <h1>Учим</h1>
-          <p>
-            -Дизайн <br />
-            -Красоту <br />
-            -Привлекательность
-          </p>
-        </BlockText>
-        <BlockCircle
-          background={require('./../../img/Helen.png')}
-        ></BlockCircle>
-      </Fade>
-    </TeacherBlock>
-    <TeacherBlock>
-      <Fade right>
-        <BlockTitle>
-          <h1>Продвижение</h1>
-        </BlockTitle>
-        <BlockText>
-          <h1>Марина Март</h1>
-          <p>
-            Рассказываю про продвижение в инстаграме, различные фишки, приколы.
-            Хочу чтобы сторисы были отражением жизни и вообще весело-приятно
-          </p>
-          <h1>Учим</h1>
-          <p>
-            -Продвижение <br />
-            -Кайф <br />
-            -Привлекательность
-          </p>
-        </BlockText>
-        <BlockCircle
-          background={require('./../../img/Marina.png')}
-        ></BlockCircle>
-      </Fade>
-    </TeacherBlock>
-    <TeacherBlock>
-      <Fade left>
-        <BlockTitle>
-          <h1>Дизайн</h1>
-        </BlockTitle>
-        <BlockText>
-          <h1>Елена Козлова</h1>
-          <p>
-            Рассказываю зачем нужен дизайн для инстагрмма, ведь это так круто!!
-            Всякие красивые штучки-дрючки, палочки - кружочки!
-          </p>
-          <h1>Учим</h1>
-          <p>
-            -Дизайн <br />
-            -Красоту <br />
-            -Привлекательность
-          </p>
-        </BlockText>
-        <BlockCircle
-          background={require('./../../img/Helen.png')}
-        ></BlockCircle>
-      </Fade>
-    </TeacherBlock>
-    <TeacherBlock>
-      <Fade right>
-        <BlockTitle>
-          <h1>Продвижение</h1>
-        </BlockTitle>
-        <BlockText>
-          <h1>Марина Март</h1>
-          <p>
-            Рассказываю про продвижение в инстаграме, различные фишки, приколы.
-            Хочу чтобы сторисы были отражением жизни и вообще весело-приятно
-          </p>
-          <h1>Учим</h1>
-          <p>
-            -Продвижение <br />
-            -Кайф <br />
-            -Привлекательность
-          </p>
-        </BlockText>
-        <BlockCircle
-          background={require('./../../img/Marina.png')}
-        ></BlockCircle>
-      </Fade>
-    </TeacherBlock>
+    {allPosts}
     <Footer>
       <Fade bottom>
         <p>
-          Классные, правда? А то ли еще будет, когда вы узнаете их вживую!
-          Быстрее записывайтесь и откройте для себя больше нового!
+          Самое главное - они с радостью готовы поделиться с вами своими
+          знаниями и умениями, поэтому и подготовили для вас огненный курс.
         </p>
         <img src={require('./../../img/teacherLogo.svg')} alt="" />
       </Fade>

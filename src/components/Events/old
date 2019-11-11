@@ -1,0 +1,34 @@
+  <Fade right key={index}>
+        <Block style={style} file={file} id={index}>
+          <BlockBack></BlockBack>
+          <Title className="active" tabIndex="1">
+            {data[index].fields.title}
+          </Title>
+          <Date>{date}</Date>
+          <Description>{data[index].fields.description}</Description>
+          <Adress>{data[index].fields.adress}</Adress>
+          <Time>{time}</Time>
+          <FullDescription tabIndex="1">
+            <h1>{data[index].fields.title}</h1>
+            <h2>Описание</h2>
+            <p>{data[index].fields.fullDescription}</p>
+            <h2>Записаться</h2>
+            <Links href="https://instagram.com" tabIndex={1}>
+              <img src={require('./../../img/instagram-logo.svg')} alt="" />{' '}
+              <p>forsmart_education</p>
+            </Links>
+            <Links href="https://instagram.com" tabIndex={1}>
+              <img src={require('./../../img/envelope.svg')} alt="" />{' '}
+              <p>forsmart-edu@gmail.com</p>
+            </Links>
+            <Links href="https://instagram.com" tabIndex={1}>
+              <img
+                src={require('./../../img/whatsapp-logo-variant.svg')}
+                alt=""
+              />
+              <p>8 (999) 692 4 222</p>
+            </Links>
+          </FullDescription>
+          {/* <Contacts>Записаться:</Contacts> */}
+        </Block>
+      </Fade>

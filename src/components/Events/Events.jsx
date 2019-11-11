@@ -10,16 +10,15 @@ import {
   Time,
   Logo,
   BlockBack,
-  Contacts
+  FullDescription,
+  Links
 } from './Events.styles'
-// import HorizontalScroll from 'react-scroll-horizontal'
 import Fade from 'react-reveal/Fade'
 import moment from 'moment'
 import 'moment/locale/ru' // without this line it didn't work
 moment.locale('ru')
 
 const contentful = require('contentful')
-
 const client = contentful.createClient({
   space: 'a5m9sfy31eyk',
   accessToken: 'E2Qt3j-Cn_5Ze_Nlje9mKMPYhHV2x1VXyZKwAVBEDAw'
@@ -56,24 +55,24 @@ const Events = props => {
       data[index].fields.photo && data[index].fields.photo.fields.file.url
     return (
       <Fade right key={index}>
-        <Block style={style} file={file}>
+        <Block style={style} file={file} id={index}>
           <BlockBack></BlockBack>
-          <Title className="active">{data[index].fields.title}</Title>
+          <Title className="active" tabIndex="1">
+            {data[index].fields.title}
+          </Title>
           <Date>{date}</Date>
           <Description>{data[index].fields.description}</Description>
           <Adress>{data[index].fields.adress}</Adress>
           <Time>{time}</Time>
-          <Contacts>Записаться:</Contacts>
+          {/* <Contacts>Записаться:</Contacts> */}
         </Block>
       </Fade>
     )
   })
   return (
     <EventsWrapper>
-      <Logo id="Events">Расписание</Logo>
-      {/* <HorizontalScroll pageLock={false} reverseScroll={true}> */}
+      <Logo id="Events">Блоки</Logo>
       <BlockWrapper width={data.length}>{allPosts}</BlockWrapper>
-      {/* </HorizontalScroll> */}
     </EventsWrapper>
   )
 }
