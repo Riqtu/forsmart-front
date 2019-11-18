@@ -14,11 +14,11 @@ const About = props => (
   <AboutWrapper id="About">
     <Upath>
       <Slide top big opposite>
-        <img src={require('./../../img/U-pink.svg')} alt="" />
+        <img src={require('./../../img/U-pink.svg')} alt="Фоновая буква U" />
       </Slide>
     </Upath>
     <RpathU>
-      <img src={require('./../../img/rpathu.svg')} alt="" />
+      <img src={require('./../../img/rpathu.svg')} alt="Переход между R и U" />
     </RpathU>
     <Text>
       <Fade right>

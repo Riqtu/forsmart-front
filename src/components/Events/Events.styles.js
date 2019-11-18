@@ -6,7 +6,6 @@ export const EventsWrapper = styled.section`
   width: 100%;
   min-height: 800px;
   /* height: 100vh; */
-  overflow: scroll;
   background-color: white;
   @media screen and (max-width: 500px) {
     /* height: calc(100vh + 20px); */
@@ -15,34 +14,147 @@ export const EventsWrapper = styled.section`
 `
 export const Logo = styled.h1`
   position: relative;
+  left: 0;
   text-transform: uppercase;
   right: 0;
   top: 20px;
-  left: 50px;
-
+  margin-left: 50px;
+  overflow-x: hidden;
   font-size: 40pt;
   @media screen and (max-width: 500px) {
-    left: 20px;
+    margin-left: 20px;
     font-size: 25pt;
+  }
+`
+export const Next = styled.img`
+  position: absolute;
+  width: 20px;
+  top: 50%;
+  left: auto;
+  right: 10px;
+  opacity: 0.5;
+  display: none;
+  @media screen and (max-width: 500px) {
+    display: block;
+  }
+`
+
+export const FormWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 50%);
+  z-index: 5;
+  transition: 0.6s;
+  /* display: ${props => (props.active ? 'block' : 'none')}; */
+  opacity: ${props => (props.active ? '1' : '0')};
+  transform: translateY(${props => (props.active ? '0' : '100%')});
+  display: grid;
+  visibility:${props => (props.active ? 'visible' : 'hidden')}; 
+  align-content: center;
+  justify-content: center;
+
+`
+
+export const Form = styled.form`
+  position: relative;
+  width: 330px;
+  height: 300px;
+  background-color: white;
+  border-radius: 20px;
+  text-align: center;
+`
+
+export const Input = styled.input`
+  width: 70%;
+  /* margin-left: 15%; */
+  margin-top: 10px;
+  text-align: center;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #d8127d;
+  transition: 0.3s;
+  opacity: ${props => (props.active ? '0' : '1')};
+  visibility: ${props => (props.active ? 'hidden' : 'visible')};
+`
+export const Submit = styled.input`
+  width: 70%;
+  -webkit-appearance: none;
+  /* margin-left: 15%; */
+  margin-top: 15px;
+  text-align: center;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #d8127d;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  opacity: ${props => (props.active ? '0' : '1')};
+  visibility: ${props => (props.active ? 'hidden' : 'visible')};
+  transition: 0.3s;
+  &:hover {
+    background-color: white;
+    color: #d8127d;
+    border: 1px solid #d8127d;
+  }
+`
+export const Thanks = styled.div`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #d8127d;
+  opacity: ${props => (props.active ? '1' : '0')};
+  visibility: ${props => (props.active ? 'visible' : 'hidden')};
+  border-radius: 20px;
+  transition: 0.4s;
+  color: white;
+  span {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 0;
+    text-align: center;
+    font-size: 90pt;
+    animation: heartbeat 1s infinite;
+  }
+  @keyframes heartbeat {
+    0% {
+      transform: scale(0.85);
+    }
+    20% {
+      transform: scale(1);
+    }
+    40% {
+      transform: scale(0.85);
+    }
+    60% {
+      transform: scale(1);
+    }
+    80% {
+      transform: scale(0.85);
+    }
+    100% {
+      transform: scale(0.85);
+    }
   }
 `
 export const BlockWrapper = styled.section`
   position: relative;
-
-  overflow-x: scroll !important;
+  overflow-x: hidden;
   overflow-y: hidden;
   ::-webkit-scrollbar {
     width: 0px; /* Remove scrollbar space */
     background: transparent; /* Optional: just make scrollbar invisible */
   }
-  width: ${props => props.width * 450 + 'px'};
-  /* width: 100%; */
+  width: ${props => props.width * 220 + 'px'};
+  min-width: 420px;
   float: left;
-  /* height: 80%; */
-  /* margin-top: 20%; */
-  /* padding-left: 30px; */
+  padding-left: 30px;
   @media screen and (max-width: 500px) {
-    width: ${props => props.width * 350 + 'px'};
+    width: ${props => props.width * 180 + 'px'};
     padding-left: 10px;
   }
 `
@@ -50,8 +162,8 @@ export const Date = styled.h2`
   position: relative;
 
   text-transform: uppercase;
-  font-size: 32pt;
-  margin-top: -15px;
+  font-size: 24pt;
+  margin-top: -10px;
   transition: 0.3s;
   z-index: 1;
   @media screen and (max-width: 500px) {
@@ -136,93 +248,36 @@ export const BlockBack = styled.div`
   transition: 0.3s;
   z-index: 0;
 `
-export const Contacts = styled.div`
-  position: absolute;
+export const Contacts = styled.button`
+  cursor: pointer;
+  width: 250px;
+  height: 50px;
+  margin-top: 30px;
+  margin-left: calc(50% - 135px);
+  position: relative;
+  text-align: center;
   font-size: 20pt;
   z-index: 1;
   opacity: 0;
   color: black;
   transition: 0.5s;
-`
-export const Links = styled.a`
-  display: none;
-  position: relative;
-  height: 30px;
-  text-decoration: none;
-  p {
-    position: relative;
-    font-size: 10pt;
-    font-family: 'Inter';
-    color: black;
-    height: 30px;
-    left: 10px;
-    display: grid;
-    align-content: center;
-    @media screen and (max-width: 500px) {
-      display: none;
-    }
-  }
-  img {
-    filter: invert(100%);
-    width: 30px;
-    float: left;
-    @media screen and (max-width: 500px) {
-      margin: 20px;
-      margin-left: 0;
-    }
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 10px;
+  border: none;
+  color: #d8127d;
+  transition: 0.3s;
+  background-color: white;
+  visibility: hidden;
+  &:hover {
+    background-color: #d8127d;
+    color: white;
   }
 `
 
-export const FullDescription = styled.div`
-  position: absolute;
-  overflow-y: hidden;
-  width: 85%;
-  height: 95%;
-  top: 0;
-  left: 2.5%;
-  right: 2.5%;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  /* top: 10px;
-  left: 10px;
-  right: 10px; */
-  z-index: 1;
-  opacity: 0;
-  color: black;
-  transition: 0.5s;
-  line-height: 0.2;
-  h1 {
-    line-height: 1;
-    font-size: 25pt;
-  }
-  h2 {
-    font-size: 15pt;
-  }
-  p {
-    line-height: 1;
-    font-family: 'Inter';
-    font-size: 12pt;
-    white-space: pre-wrap;
-  }
-  @media screen and (max-width: 500px) {
-    font-size: 14pt;
-  }
-
-  &:hover ${Links} {
-    display: block;
-  }
-  &:focus {
-    background-color: blue;
-  }
-  &:focus ${Links} {
-    display: block;
-  }
-`
 export const Title = styled.h1`
   position: relative;
   text-transform: uppercase;
-  font-size: 28pt;
+  font-size: 20pt;
   margin-top: 50px;
   color: white;
   transition: 0.3s;
@@ -230,16 +285,13 @@ export const Title = styled.h1`
   line-height: 1;
   margin-top: 23px;
   @media screen and (max-width: 500px) {
-    font-size: 20pt;
+    font-size: 18pt;
   }
   @media screen and (max-width: 320px) {
     font-size: 17pt;
   }
-
-  /* &:focus ~ ${FullDescription} {
-    opacity: 1;
-  } */
 `
+
 export const Block = styled.div`
   margin-top: 20px;
   margin-bottom: 50px;
@@ -265,34 +317,31 @@ export const Block = styled.div`
   }
   &:hover ${Title} {
     color:black;
-    opacity: 0
+    /* opacity: 0 */
   }
   &:hover ${Description} {
     color:black;
-    opacity: 0
+    /* opacity: 0 */
   }
   &:hover ${Adress} {
     color:black;
-    opacity: 0
+    /* opacity: 0 */
   }
   &:hover ${Time} {
     color:black;
-    opacity: 0
+    /* opacity: 0 */
   }
   &:hover ${Date} {
     color:black;
-    opacity: 0
+    /* opacity: 0 */
   }
   &:hover ${BlockBack} {
     opacity: 0.7
   }
   &:hover ${Contacts} {
-    opacity: 0
-  }
-  /* &:hover ${FullDescription} {
     opacity: 1;
-    overflow-y: auto;
-  } */
+    visibility: visible;
+  }
 
   @media screen and (max-width: 500px) {
     width: 300px;
@@ -318,11 +367,8 @@ export const Block = styled.div`
     all: none;
   }
   &:hover ${Contacts} {
-    all: none;
+    opacity: 1;
   }
-  /* &:hover ${FullDescription} {
-    all: none;
-  } */
 
   &:active{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);

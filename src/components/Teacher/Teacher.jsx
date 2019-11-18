@@ -8,8 +8,7 @@ import {
   BlockCircle,
   BlockText,
   BlockTitle,
-  Footer,
-  Path
+  Footer
 } from './Teacher.styles'
 import * as data from './teachers.json'
 import LightSpeed from 'react-reveal/LightSpeed'
@@ -17,7 +16,7 @@ import Fade from 'react-reveal/Fade'
 
 let allPosts = data.teachers.map((el, index) => {
   return (
-    <TeacherBlock center={data.teachers[index].center}>
+    <TeacherBlock center={data.teachers[index].center} key={index}>
       <Fade
         right={!data.teachers[index].right}
         left={data.teachers[index].right}
@@ -65,7 +64,6 @@ const Teacher = props => (
         <img src={require('./../../img/teacherLogo.svg')} alt="" />
       </Fade>
     </Footer>
-    <Path></Path>
   </TeacherWrapper>
 )
 

@@ -42,12 +42,12 @@ const HelloPage = props => {
       <Pattern></Pattern>
       <Logo>
         <Zoom top>
-          <img src={require('./../../img/logo.svg')} alt="" />
+          <img src={require('./../../img/logo.svg')} alt="Логотип" />
         </Zoom>
       </Logo>
       <BackR>
         <Slide bottom duration={1400}>
-          <img src={require('./../../img/R-white.svg')} alt="" />
+          <img src={require('./../../img/R-white.svg')} alt="Фоновая буква R" />
         </Slide>
       </BackR>
       <Text>

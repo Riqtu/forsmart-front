@@ -4,6 +4,7 @@ export const FooterWrapper = styled.footer`
   position: relative;
   width: 100%;
   height: 60vh;
+  min-height: 400px;
   overflow: hidden;
   background-color: #272727;
   margin: 0;

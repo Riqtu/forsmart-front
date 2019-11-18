@@ -7,6 +7,7 @@ import smoothscroll from 'smoothscroll-polyfill'
 import Teacher from './components/Teacher/Teacher'
 import Events from './components/Events/Events'
 import Footer from './components/Footer/Footer'
+import EducationCourse from './components/EducationCourse/EducationCourse'
 smoothscroll.polyfill()
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <HelloPage></HelloPage>
       <About></About>
       <Teacher></Teacher>
+      <EducationCourse></EducationCourse>
       <Events></Events>
       <Footer></Footer>
     </div>

@@ -115,7 +115,7 @@ export const AdditionBlock = styled.section`
     left: 20vw;
   }
   @media screen and (max-width: 320px) {
-    height: 50vh;
+    height: 40vh;
 
     /* top: 80%; */
     width: 80vw;

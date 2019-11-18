@@ -7,7 +7,7 @@ const Footer = props => (
     <Circle></Circle>
     <Logo>
       <Fade left>
-        <img src={require('./../../img/footerlogo.svg')} alt="" />
+        <img src={require('./../../img/footerlogo.svg')} alt="Логотип" />
       </Fade>
     </Logo>
     <Text>
@@ -17,22 +17,28 @@ const Footer = props => (
         <h1>Сайт</h1>
 
         <Links href="https://instagram.com">
-          <img src={require('./../../img/instagram-logo.svg')} alt="" />{' '}
+          <img
+            src={require('./../../img/instagram-logo.svg')}
+            alt="Лого инстаграм"
+          />{' '}
           <p>forsmart_education</p>
         </Links>
         <Links href="https://instagram.com">
-          <img src={require('./../../img/envelope.svg')} alt="" />{' '}
+          <img src={require('./../../img/envelope.svg')} alt="Почта" />{' '}
           <p>forsmart-edu@gmail.com</p>
         </Links>
         <Links href="https://instagram.com">
-          <img src={require('./../../img/whatsapp-logo-variant.svg')} alt="" />{' '}
+          <img
+            src={require('./../../img/whatsapp-logo-variant.svg')}
+            alt="Телефон/WhatsApp"
+          />{' '}
           <p>8 (999) 692 4 222</p>
         </Links>
       </Fade>
     </Text>
     <Path>
       <Fade right>
-        <img src={require('./../../img/Urotate.svg')} alt="" />
+        <img src={require('./../../img/Urotate.svg')} alt="Фоновая картинка" />
       </Fade>
     </Path>
   </FooterWrapper>

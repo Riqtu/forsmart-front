@@ -193,7 +193,7 @@ export const StartBack = styled.div`
   width: 100%;
   height: 100vh;
   background-color: black;
-  animation: start 2s forwards;
+  animation: start 1s forwards;
   z-index: 1000000;
   @keyframes start {
     0% {

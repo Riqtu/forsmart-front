@@ -7,6 +7,7 @@ export const TeacherWrapper = styled.div`
   min-height: 1800px;
   background-color: white;
   margin-top: -100px;
+  overflow-x: hidden;
   @media screen and (max-width: 1200px) {
     min-height: 2600px;
   }
@@ -105,12 +106,16 @@ export const TeacherBlock = styled.div`
   float: left;
   margin-bottom: 70px;
   @media screen and (max-width: 1200px) {
-    left: 5%;
+    margin-left: 9%;
     width: 100%;
-    top: 25%;
+    /* height: 150px;
+    top: 100px; */
   }
-  @media screen and (max-width: 930px) {
-    left: -2%;
+  @media screen and (max-width: 850px) {
+    margin-left: 0%;
+  }
+  @media screen and (max-width: 650px) {
+    margin-left: -10%;
   }
   @media screen and (max-width: 500px) {
     margin-left: 0;
@@ -150,12 +155,12 @@ export const BlockCircle = styled.div`
   left: 10%;
   background-image: url('${props => props.background}');
   background-size: cover;
-  @media screen and (max-width: 930px) {
+  /* @media screen and (max-width: 930px) {
     border: 3px solid #e5fd00;
     width: 190px;
     height: 190px;
     left: 14%;
-  }
+  } */
   @media screen and (max-width: 500px) {
     border: 3px solid #e5fd00;
     width: 140px;
@@ -201,14 +206,14 @@ export const BlockText = styled.div`
       margin-left: 45%;
     }
   }
-  @media screen and (max-width: 930px) {
+  /* @media screen and (max-width: 930px) {
     width: 68%;
     height: 185px;
     left: 22%;
     top: 0;
     padding-top: 5px;
     padding-right: 10px;
-  }
+  } */
   @media screen and (max-width: 500px) {
     width: 68%;
     height: 135px;
@@ -223,8 +228,11 @@ export const Footer = styled.div`
   overflow: hidden;
   position: relative;
   width: 100%;
-  top: 200px;
-  float: none;
+  /* background-color: blueviolet; */
+  padding-top: 200px;
+  padding-bottom: 50px;
+  /* top: 200px; */
+  /* float: none; */
   /* bottom: 14%; */
   text-align: center;
   p {
@@ -238,7 +246,7 @@ export const Footer = styled.div`
   img {
   }
   @media screen and (max-width: 500px) {
-    top: 100px;
+    /* top: 100px; */
     /* bottom: 10%; */
     width: 90%;
     left: 5%;
@@ -247,33 +255,5 @@ export const Footer = styled.div`
       margin-left: 5%;
       font-size: 15pt;
     }
-  }
-`
-export const Path = styled.div`
-overflow: hidden;
-  position: relative;
-  width: 200%;
-  height: 250px;
-  margin-top: 200px;
-  top: auto;
-  bottom: -30px;
-  background-image: url('${require('./../../img/path.svg')}');
-  background-repeat: repeat-x;
-  background-position-y: bottom;
-  animation: wave 50s forwards infinite ease-out alternate;
-  overflow: hidden;
-  @media screen and (max-width: 500px) {
-    bottom: -70px;
-  }
-  @keyframes wave {
-      0%{
-        transform: translateX(0);
-      }
-      50%{
-        transform: translateX(-50%);
-      }
-      100%{
-        transform: translateX(0%);
-      }
   }
 `

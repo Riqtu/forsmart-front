@@ -10,10 +10,14 @@ import {
   Time,
   Logo,
   BlockBack,
-  FullDescription,
-  Links
+  Contacts,
+  Next,
+  FormWrapper,
+  Form,
+  Input,
+  Submit,
+  Thanks
 } from './Events.styles'
-import Fade from 'react-reveal/Fade'
 import moment from 'moment'
 import 'moment/locale/ru' // without this line it didn't work
 moment.locale('ru')
@@ -28,6 +32,8 @@ const Events = props => {
   const [data, setData] = useState([
     { fields: { photo: { fields: { file: '' } } }, sys: {} }
   ])
+  const [formActive, setFormActive] = useState(false)
+  const [submit, setSubmit] = useState(false)
   useEffect(() => {
     async function fetchData() {
       await client
@@ -54,24 +60,76 @@ const Events = props => {
     const file =
       data[index].fields.photo && data[index].fields.photo.fields.file.url
     return (
-      <Fade right key={index}>
-        <Block style={style} file={file} id={index}>
-          <BlockBack></BlockBack>
-          <Title className="active" tabIndex="1">
-            {data[index].fields.title}
-          </Title>
-          <Date>{date}</Date>
-          <Description>{data[index].fields.description}</Description>
-          <Adress>{data[index].fields.adress}</Adress>
-          <Time>{time}</Time>
-          {/* <Contacts>Записаться:</Contacts> */}
-        </Block>
-      </Fade>
+      <Block key={index} style={style} file={file} id={index}>
+        <BlockBack></BlockBack>
+        <Title className="active" tabIndex="1">
+          {data[index].fields.title}
+        </Title>
+        <Date>{date}</Date>
+        <Description>{data[index].fields.description}</Description>
+        <Adress>{data[index].fields.adress}</Adress>
+        <Time>{time}</Time>
+        <Contacts
+          onClick={() => {
+            setFormActive(!formActive)
+          }}
+        >
+          Записаться
+        </Contacts>
+      </Block>
     )
   })
   return (
     <EventsWrapper>
-      <Logo id="Events">Блоки</Logo>
+      <Logo id="Events">Расписание</Logo>
+      <Next src={require('./../../img/next.svg')} alt="" />
+      <iframe
+        title="formPost"
+        name="formPost"
+        style={{ display: 'none' }}
+      ></iframe>
+      <FormWrapper
+        active={formActive}
+        onClick={() => {
+          setFormActive(!formActive)
+        }}
+      >
+        <Form
+          action="./send.php"
+          method="post"
+          target="formPost"
+          id="form"
+          onClick={e => e.stopPropagation()}
+        >
+          <h1>Заполните данные</h1>
+          <Input
+            type="text"
+            name="fio"
+            placeholder="Укажите ФИО"
+            active={submit}
+          />
+          <Input
+            type="text"
+            name="email"
+            placeholder="Укажите e-mail"
+            active={submit}
+          />
+          <Submit
+            type="submit"
+            value="Отправить"
+            onClick={() => setSubmit(true)}
+            active={submit}
+          />
+          <Thanks active={submit}>
+            <h1>
+              СПАСИБО! <br /> Мы обязательно свяжемся с вами!
+            </h1>
+            <span role="img" aria-label="сердце">
+              ❤️
+            </span>
+          </Thanks>
+        </Form>
+      </FormWrapper>
       <BlockWrapper width={data.length}>{allPosts}</BlockWrapper>
     </EventsWrapper>
   )
