@@ -59,26 +59,39 @@ const Events = props => {
     }
     const file =
       data[index].fields.photo && data[index].fields.photo.fields.file.url
-    return (
-      <Block key={index} style={style} file={file} id={index}>
-        <BlockBack></BlockBack>
-        <Title className="active" tabIndex="1">
-          {data[index].fields.title}
-        </Title>
-        <Date>{date}</Date>
-        <Description>{data[index].fields.description}</Description>
-        <Adress>{data[index].fields.adress}</Adress>
-        <Time>{time}</Time>
-        <Contacts
-          onClick={() => {
-            setFormActive(!formActive)
-          }}
-        >
-          Записаться
-        </Contacts>
-      </Block>
-    )
+    if (!data[index].fields.comingSoon) {
+      return (
+        <Block key={index} style={style} file={file} id={index}>
+          <BlockBack></BlockBack>
+          <Title className="active" tabIndex="1">
+            {data[index].fields.title}
+          </Title>
+          <Date>{date}</Date>
+          <Description>{data[index].fields.description}</Description>
+          <Adress>{data[index].fields.adress}</Adress>
+          <Time>{time}</Time>
+          <Contacts
+            onClick={() => {
+              setFormActive(!formActive)
+            }}
+          >
+            Записаться
+          </Contacts>
+        </Block>
+      )
+    } else {
+      return (
+        <Block key={index} style={style} file={file} id={index}>
+          <BlockBack></BlockBack>
+          <Title className="active" tabIndex="1">
+            {data[index].fields.title}
+          </Title>
+          <Description>Coming Soon</Description>
+        </Block>
+      )
+    }
   })
+
   return (
     <EventsWrapper>
       <Logo id="Events">Расписание</Logo>

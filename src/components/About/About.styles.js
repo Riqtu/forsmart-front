@@ -128,7 +128,7 @@ export const Block = styled.section`
   width: 100%;
   height: 45vh;
   background: #3d38d0;
-  padding-left: 20px;
+  padding: 30px;
   p {
     font-size: 15pt;
     width: 90%;
@@ -142,20 +142,20 @@ export const Block = styled.section`
   }
   h3 {
     margin-top: -10px;
-    font-size: 30pt;
+    font-size: 20pt;
     color: white;
-    width: 90%;
+    width: 80%;
     @media screen and (max-width: 1350px) {
       font-size: 20pt;
     }
     @media screen and (max-width: 920px) {
-      font-size: 15pt;
+      font-size: 10pt;
     }
     @media screen and (max-width: 500px) {
-      font-size: 15pt;
+      font-size: 10pt;
     }
     @media screen and (max-width: 320px) {
-      font-size: 10pt;
+      font-size: 7pt;
     }
   }
 `

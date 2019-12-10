@@ -150,7 +150,7 @@ export const BlockWrapper = styled.section`
     background: transparent; /* Optional: just make scrollbar invisible */
   }
   width: ${props => props.width * 220 + 'px'};
-  min-width: 420px;
+  min-width: 98%;
   float: left;
   padding-left: 30px;
   @media screen and (max-width: 500px) {
@@ -237,7 +237,7 @@ export const TakePart = styled.button`
   border: none;
 `
 export const BlockBack = styled.div`
-  margin: 0;
+  margin-top: -20px;
   left: 0;
   position: absolute;
   width: 100%;
@@ -253,7 +253,7 @@ export const Contacts = styled.button`
   width: 250px;
   height: 50px;
   margin-top: 30px;
-  margin-left: calc(50% - 135px);
+  margin-left: calc(50% - 130px);
   position: relative;
   text-align: center;
   font-size: 20pt;
@@ -278,7 +278,6 @@ export const Title = styled.h1`
   position: relative;
   text-transform: uppercase;
   font-size: 20pt;
-  margin-top: 50px;
   color: white;
   transition: 0.3s;
   z-index: 1;
@@ -312,6 +311,8 @@ export const Block = styled.div`
   line-height: 0.2;
   color: white;
   transition: 0.3s;
+  padding: 20px;
+  box-sizing: border-box;
   &:hover{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }

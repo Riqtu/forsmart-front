@@ -209,7 +209,7 @@ export const StartBack = styled.div`
     }
   }
 `
-export const PrettyLinks = styled.div`
+export const PrettyLinks = styled.a`
   i {
     font-style: normal;
     text-transform: uppercase;

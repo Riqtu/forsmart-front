@@ -14,6 +14,7 @@ import Zoom from 'react-reveal/Zoom'
 import Slide from 'react-reveal/Slide'
 
 import * as Scroll from 'react-scroll'
+let Link = Scroll.Link
 
 const HelloPage = props => {
   return (
@@ -61,12 +62,12 @@ const HelloPage = props => {
           <Zoom delay={500}>
             Самый полный курс по <br />
             продвижению в Instagram <br />
-            <Scroll.Link className="link" to="About" spy={true} smooth={true}>
+            <Link className="link" to="About" spy={true} smooth={true}>
               <PrettyLinks>
                 <i>Узнать</i>
                 <i>Больше</i>
               </PrettyLinks>
-            </Scroll.Link>
+            </Link>
           </Zoom>
         </h2>
       </Text>

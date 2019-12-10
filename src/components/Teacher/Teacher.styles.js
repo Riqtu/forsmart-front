@@ -182,7 +182,7 @@ export const BlockText = styled.div`
   padding-right: 20px;
   h1 {
     margin-left: 25%;
-    font-size: 15pt;
+    font-size: 12pt;
     line-height: 0;
     @media screen and (max-width: 500px) {
       font-size: 8pt;

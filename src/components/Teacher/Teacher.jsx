@@ -26,9 +26,16 @@ let allPosts = data.teachers.map((el, index) => {
         </BlockTitle>
         <BlockText>
           <h1>{data.teachers[index].name}</h1>
-          <p>{data.teachers[index].description}</p>
-          <h1>Учим</h1>
-          <p>{data.teachers[index].skills}</p>
+          <p>
+            {data.teachers[index].description.split('\n').map((item, i) => (
+              <React.Fragment key={i}>
+                {item}
+                <br />
+              </React.Fragment>
+            ))}
+          </p>
+          {/* <h1>Учим</h1>
+          <p>{data.teachers[index].skills}</p> */}
         </BlockText>
         <BlockCircle
           background={require('./../../img' + data.teachers[index].photo)}
@@ -38,33 +45,39 @@ let allPosts = data.teachers.map((el, index) => {
   )
 })
 
-const Teacher = props => (
-  <TeacherWrapper>
-    <TeacherWrapperBLueBack />
-    <TeacherWrapperMainBack />
-    <Text>
-      <LightSpeed right>
-        <h1>ПРЕПОДАВАТЕЛИ</h1>
-      </LightSpeed>
-      <Fade delay={600}>
-        <p>
-          Скучные занятия - не про Forsmart! Именно поэтому наши преподаватели
-          молодые, задорные, веселые и, конечно (куда ж без этого), настоящие
-          профессионалы в своей области.
-        </p>
-      </Fade>
-    </Text>
-    {allPosts}
-    <Footer>
-      <Fade bottom>
-        <p>
-          Самое главное - они с радостью готовы поделиться с вами своими
-          знаниями и умениями, поэтому и подготовили для вас огненный курс.
-        </p>
-        <img src={require('./../../img/teacherLogo.svg')} alt="" />
-      </Fade>
-    </Footer>
-  </TeacherWrapper>
-)
+const Teacher = props => {
+  return (
+    <TeacherWrapper>
+      <TeacherWrapperBLueBack />
+      <TeacherWrapperMainBack />
+      <Text>
+        <LightSpeed right>
+          <h1>ПРЕПОДАВАТЕЛИ</h1>
+        </LightSpeed>
+        <Fade delay={600}>
+          <p>
+            Спикеры FORSMART EDUCATION - это команда профессионалов, которые
+            продолжают совершенствовать свои навыки каждый день. Они точно
+            знают, что современный маркетинг немыслем без социальных сетей. Они
+            освоили не только теорию SMM, но и опробовали свои знания на
+            практике. Они научат ориентироваться в самой быстро развивающейся
+            сфере. За их плечами десятки успешных проектов и они готовы сделать
+            из вас специалистов сферы digital.
+          </p>
+        </Fade>
+      </Text>
+      {allPosts}
+      <Footer>
+        <Fade bottom>
+          <p>
+            Самое главное - они с радостью готовы поделиться с вами своими
+            знаниями и умениями, поэтому и подготовили для вас огненный курс.
+          </p>
+          <img src={require('./../../img/teacherLogo.svg')} alt="" />
+        </Fade>
+      </Footer>
+    </TeacherWrapper>
+  )
+}
 
 export default Teacher
