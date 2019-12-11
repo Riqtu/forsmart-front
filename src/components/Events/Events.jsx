@@ -4,14 +4,9 @@ import {
   Block,
   BlockWrapper,
   Title,
-  Date,
   Description,
   Adress,
-  Time,
   Logo,
-  BlockBack,
-  Contacts,
-  Next,
   FormWrapper,
   Form,
   Input,
@@ -20,6 +15,7 @@ import {
 } from './Events.styles'
 import moment from 'moment'
 import 'moment/locale/ru' // without this line it didn't work
+import EventBlock from './EventBlock'
 moment.locale('ru')
 
 const contentful = require('contentful')
@@ -61,32 +57,26 @@ const Events = props => {
       data[index].fields.photo && data[index].fields.photo.fields.file.url
     if (!data[index].fields.comingSoon) {
       return (
-        <Block key={index} style={style} file={file} id={index}>
-          <BlockBack></BlockBack>
-          <Title className="active" tabIndex="1">
-            {data[index].fields.title}
-          </Title>
-          <Date>{date}</Date>
-          <Description>{data[index].fields.description}</Description>
-          <Adress>{data[index].fields.adress}</Adress>
-          <Time>{time}</Time>
-          <Contacts
-            onClick={() => {
-              setFormActive(!formActive)
-            }}
-          >
-            Записаться
-          </Contacts>
-        </Block>
+        <EventBlock
+          title={data[index].fields.title}
+          date={date}
+          time={time}
+          description={data[index].fields.description}
+          adress={data[index].fields.adress}
+          file={file}
+          setFormActive={setFormActive}
+          data={data}
+          index={index}
+        ></EventBlock>
       )
     } else {
       return (
         <Block key={index} style={style} file={file} id={index}>
-          <BlockBack></BlockBack>
           <Title className="active" tabIndex="1">
             {data[index].fields.title}
           </Title>
-          <Description>Coming Soon</Description>
+          <Description>Coming Soon...</Description>
+          <Adress>{data[index].fields.adress}</Adress>
         </Block>
       )
     }
@@ -95,7 +85,6 @@ const Events = props => {
   return (
     <EventsWrapper>
       <Logo id="Events">Расписание</Logo>
-      <Next src={require('./../../img/next.svg')} alt="" />
       <iframe
         title="formPost"
         name="formPost"

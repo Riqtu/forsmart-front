@@ -149,18 +149,19 @@ export const BlockWrapper = styled.section`
     width: 0px; /* Remove scrollbar space */
     background: transparent; /* Optional: just make scrollbar invisible */
   }
-  width: ${props => props.width * 220 + 'px'};
-  min-width: 98%;
+  /* width: ${props => props.width * 220 + 'px'}; */
+  /* min-width: 98%; */
   float: left;
   padding-left: 30px;
   @media screen and (max-width: 500px) {
-    width: ${props => props.width * 180 + 'px'};
+    /* width: ${props => props.width * 180 + 'px'}; */
     padding-left: 10px;
   }
 `
 export const Date = styled.h2`
   position: relative;
-
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   font-size: 24pt;
   margin-top: -10px;
@@ -200,6 +201,8 @@ export const Adress = styled.h3`
   margin-top: -10px;
   line-height: 1;
   transition: 0.3s;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
   @media screen and (max-width: 500px) {
     font-size: 15pt;
   }
@@ -217,6 +220,8 @@ export const Time = styled.h3`
   margin-top: -10px;
   line-height: 1;
   transition: 0.3s;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
   @media screen and (max-width: 500px) {
     font-size: 30pt;
   }
@@ -237,14 +242,14 @@ export const TakePart = styled.button`
   border: none;
 `
 export const BlockBack = styled.div`
-  margin-top: -20px;
   left: 0;
   position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: white;
   border-radius: 20px;
-  opacity: 0;
+  opacity: ${props => (props.active ? '0.8' : '0')};
   transition: 0.3s;
   z-index: 0;
 `
@@ -258,7 +263,9 @@ export const Contacts = styled.button`
   text-align: center;
   font-size: 20pt;
   z-index: 1;
-  opacity: 0;
+  opacity: ${props => (props.active ? setTimeout(() => '1', 300) : '0')};
+  visibility: ${props =>
+    props.active ? setTimeout(() => 'visible', 100) : 'hidden'};
   color: black;
   transition: 0.5s;
   font-family: 'Montserrat', sans-serif;
@@ -267,7 +274,7 @@ export const Contacts = styled.button`
   color: #d8127d;
   transition: 0.3s;
   background-color: white;
-  visibility: hidden;
+  /* visibility: hidden; */
   &:hover {
     background-color: #d8127d;
     color: white;
@@ -282,7 +289,11 @@ export const Title = styled.h1`
   transition: 0.3s;
   z-index: 1;
   line-height: 1;
-  margin-top: 23px;
+  top: 0;
+  font-weight: 900;
+  padding-right: 20px;
+  font-family: 'Montserrat', sans-serif;
+  /* margin-top: 23px; */
   @media screen and (max-width: 500px) {
     font-size: 18pt;
   }
@@ -290,23 +301,28 @@ export const Title = styled.h1`
     font-size: 17pt;
   }
 `
-
-export const Block = styled.div`
+export const TextPosition = styled.div`
+  position: absolute;
+  top: 0;
+`
+export const Block = styled.button`
+top: 0;
+text-align: left;
+cursor: pointer;
   margin-top: 20px;
   margin-bottom: 50px;
   position: relative;
   width: 370px;
   height: 480px;
   float: left ;
-  /* white-space: nowrap; */
-  /* display: inline-block; */
   background-color: gray;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   border-radius: 20px;
-  padding-left: 10px;
   margin-left: 20px;
   margin-right: 20px;
-  background-image: url('${props => 'https:' + props.file}');
+  background-image: linear-gradient(180deg, rgba(196, 196, 196, 0.5) 0%, rgba(196, 196, 196, 0) 60%), 
+  url('${props => 'https:' + props.file}');
+  opacity: 0.9;
   background-size: cover;
   line-height: 0.2;
   color: white;
@@ -314,87 +330,14 @@ export const Block = styled.div`
   padding: 20px;
   box-sizing: border-box;
   &:hover{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
-  &:hover ${Title} {
-    color:black;
-    /* opacity: 0 */
-  }
-  &:hover ${Description} {
-    color:black;
-    /* opacity: 0 */
-  }
-  &:hover ${Adress} {
-    color:black;
-    /* opacity: 0 */
-  }
-  &:hover ${Time} {
-    color:black;
-    /* opacity: 0 */
-  }
-  &:hover ${Date} {
-    color:black;
-    /* opacity: 0 */
-  }
-  &:hover ${BlockBack} {
-    opacity: 0.7
-  }
-  &:hover ${Contacts} {
     opacity: 1;
-    visibility: visible;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   }
+
 
   @media screen and (max-width: 500px) {
     width: 300px;
   height: 430px;
-  &:hover{
-  }
-  &:hover ${Title} {
-    all: none;
-  }
-  &:hover ${Description} {
-    all: none;
-  }
-  &:hover ${Adress} {
-    all: none;
-  }
-  &:hover ${Time} {
-    all: none;
-  }
-  &:hover ${Date} {
-    all: none;
-  }
-  &:hover ${BlockBack} {
-    all: none;
-  }
-  &:hover ${Contacts} {
-    opacity: 1;
-  }
-
-  &:active{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
-  &:active ${Title} {
-    color:black;
-  }
-  &:active ${Description} {
-    color:black;
-  }
-  &:active ${Adress} {
-    color:black;
-  }
-  &:active ${Time} {
-    color:black;
-  }
-  &:active ${Date} {
-    color:black;
-  }
-  &:active ${BlockBack} {
-    opacity: 0.7
-  }
-  &:active ${Contacts} {
-    opacity: 1
-  }
   }
   @media screen and (max-width: 320px) {
   width: 240px;

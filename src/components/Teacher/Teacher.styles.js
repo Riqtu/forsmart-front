@@ -127,7 +127,7 @@ export const TeacherBlock = styled.div`
 `
 export const BlockTitle = styled.div`
   position: absolute;
-  top: 20px;
+  top: 0px;
   width: 55%;
   left: calc(10% + 250px / 1.3);
   text-align: center;
@@ -166,23 +166,27 @@ export const BlockCircle = styled.div`
     width: 140px;
     height: 140px;
     left: 5%;
+    top: 10px
+
   }
 `
 export const BlockText = styled.div`
   position: absolute;
   width: 50%;
   max-width: 350px;
-  height: 170px;
-  top: 45px;
+  height: 190px;
+  top: 25px;
   background: white;
   left: calc(10% + 250px / 1.3);
   border-radius: 20px;
   border: 3px solid #e5fd00;
   padding-top: 10px;
   padding-right: 20px;
+  display: grid;
+  justify-content: center;
   h1 {
     margin-left: 25%;
-    font-size: 12pt;
+    font-size: 14pt;
     line-height: 0;
     @media screen and (max-width: 500px) {
       font-size: 8pt;
@@ -216,7 +220,7 @@ export const BlockText = styled.div`
   } */
   @media screen and (max-width: 500px) {
     width: 68%;
-    height: 135px;
+    height: 155px;
     left: 22%;
     top: 0;
     padding-top: 5px;

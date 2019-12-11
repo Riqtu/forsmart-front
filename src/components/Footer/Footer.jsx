@@ -13,7 +13,7 @@ const Footer = props => (
     <Text>
       <Fade>
         <h1>FORSMART EDUCATION</h1>
-        <p>Ул. Серафимовича д. 15</p>
+        <p>Ул. 18 линия д. 8</p>
         <h1>Сайт</h1>
 
         <Links href="https://instagram.com">
@@ -32,7 +32,7 @@ const Footer = props => (
             src={require('./../../img/whatsapp-logo-variant.svg')}
             alt="Телефон/WhatsApp"
           />{' '}
-          <p>8 (999) 692 4 222</p>
+          <p>8-(999)-692-42-22</p>
         </Links>
       </Fade>
     </Text>
