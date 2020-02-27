@@ -1,0 +1,35 @@
+{
+  "workshop": [
+    {
+      "name": "EDUCATION",
+      "file": "https://www.youtube.com/watch?v=YAbCMLzkN0k"
+    },
+    {
+      "name": "ТРЕНДЫ 2020",
+      "file": "https://www.youtube.com/watch?v=d89aQAfPN1E"
+    },
+    {
+      "name": "ДГТУ",
+      "file": "https://www.youtube.com/watch?v=mk--PT7ZZ-8"
+    }
+  ],
+  "course": [
+    {
+      "name": "EDUCATION",
+      "file": "https://www.youtube.com/watch?v=YAbCMLzkN0k"
+    }
+  ],
+  "intensive": [
+    {
+      "name": "5 #SMMдевичник ",
+      "file": "https://www.youtube.com/watch?v=RU5L7FbgZ34"
+    }
+  ],
+  "corparative": [
+    {
+      "name": "FORSMART",
+      "file": "https://www.youtube.com/watch?v=9qFeW1v5G7A"
+    }
+  ],
+  "individual": []
+}
