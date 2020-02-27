@@ -8,10 +8,26 @@ export const AboutWrapper = styled.div`
   max-height: 1100px;
   overflow: hidden;
   background-color: white;
-
   @media screen and (max-width: 500px) {
     height: 145vh;
-    min-height: 700px;
+    min-height: 1000px;
+  }
+`
+export const Clients = styled.div`
+  position: relative;
+  top: 50%;
+  left: 15px;
+  img {
+    width: 45%;
+  }
+  @media screen and (max-width: 500px) {
+    top: 57%;
+    img {
+      width: 55%;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    top: 62%;
   }
 `
 export const Upath = styled.div`
@@ -102,20 +118,53 @@ export const AdditionBlock = styled.section`
   top: auto;
   bottom: 0;
   width: 50vw;
-  height: 45vh;
+  height: 50vh;
+  min-height: 400px;
+
   left: 50vw;
+  img {
+    top: -40%;
+    right: 5%;
+    position: absolute;
+    width: 40%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: rotate(30deg);
+    @media screen and (max-width: 768px) {
+      top: -10%;
+      right: 3%;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+  }
   @media screen and (max-width: 1350px) {
     height: 45vh;
     /* top: 50%; */
   }
+  @media screen and (max-width: 768px) {
+    height: 30vh;
+  }
+  @media screen and (max-width: 500px) and (min-height: 812px) {
+    height: 43vh;
+
+    /* top: 70%; */
+    width: 80vw;
+    left: 20vw;
+  }
   @media screen and (max-width: 500px) {
     height: 50vh;
+    min-height: 200px;
+    /* top: 70%; */
+    width: 80vw;
+    left: 20vw;
+  }
+  @media screen and (max-width: 500px) and (min-height: 720px) {
+    height: 35vh;
+    min-height: 200px;
     /* top: 70%; */
     width: 80vw;
     left: 20vw;
   }
   @media screen and (max-width: 320px) {
-    height: 40vh;
+    height: 45vh;
 
     /* top: 80%; */
     width: 80vw;
@@ -126,15 +175,21 @@ export const Block = styled.section`
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 45vh;
+  height: 35vh;
+  min-height: 400px;
   background: #3d38d0;
   padding: 30px;
+  /* @media screen and (max-width: 500px) {
+    min-height: 200px;
+  } */
   p {
-    font-size: 15pt;
-    width: 90%;
+    font-size: 14pt;
+    width: 60%;
     color: white;
     @media screen and (max-width: 500px) {
-      font-size: 12pt;
+      width: 55%;
+      font-size: 8pt;
+      margin-left: -15px;
     }
     @media screen and (max-width: 320px) {
       font-size: 8pt;
@@ -152,6 +207,35 @@ export const Block = styled.section`
       font-size: 10pt;
     }
     @media screen and (max-width: 500px) {
+      font-size: 10pt;
+    }
+    @media screen and (max-width: 320px) {
+      font-size: 7pt;
+    }
+  }
+  h2 {
+    margin-top: -10px;
+    font-size: 20pt;
+    color: white;
+    width: 50%;
+    padding: 10px 0px;
+    b {
+      font-size: 30pt;
+      @media screen and (max-width: 500px) {
+        font-size: 25pt;
+      }
+      @media screen and (max-width: 320px) {
+        font-size: 15pt;
+      }
+    }
+    @media screen and (max-width: 1350px) {
+      font-size: 20pt;
+    }
+    @media screen and (max-width: 920px) {
+      font-size: 10pt;
+    }
+    @media screen and (max-width: 500px) {
+      margin-left: -15px;
       font-size: 10pt;
     }
     @media screen and (max-width: 320px) {

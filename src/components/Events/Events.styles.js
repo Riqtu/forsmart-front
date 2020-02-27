@@ -39,6 +39,15 @@ export const Next = styled.img`
   }
 `
 
+export const PlayerWrapper = styled.div`
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+  @media screen and (max-width: 500px) {
+    width: 80vw;
+    height: 70vh;
+  }
+`
 export const FormWrapper = styled.div`
   position: fixed;
   top: 0;
@@ -56,12 +65,13 @@ export const FormWrapper = styled.div`
   align-content: center;
   justify-content: center;
 
+
 `
 
 export const Form = styled.form`
   position: relative;
   width: 330px;
-  height: 300px;
+  height: 330px;
   background-color: white;
   border-radius: 20px;
   text-align: center;
@@ -74,7 +84,7 @@ export const Input = styled.input`
   text-align: center;
   height: 40px;
   border-radius: 10px;
-  border: 1px solid #d8127d;
+  border: ${props => (props.notEmpty ? '3px solid red' : '1px solid #d8127d')};
   transition: 0.3s;
   opacity: ${props => (props.active ? '0' : '1')};
   visibility: ${props => (props.active ? 'hidden' : 'visible')};
@@ -155,7 +165,7 @@ export const BlockWrapper = styled.section`
   padding-left: 30px;
   @media screen and (max-width: 500px) {
     /* width: ${props => props.width * 180 + 'px'}; */
-    padding-left: 10px;
+    padding-left: 0px;
   }
 `
 export const Date = styled.h2`
@@ -258,7 +268,7 @@ export const Contacts = styled.button`
   width: 250px;
   height: 50px;
   margin-top: 30px;
-  margin-left: calc(50% - 130px);
+  margin-left: calc(50% - 125px);
   position: relative;
   text-align: center;
   font-size: 20pt;
@@ -279,6 +289,9 @@ export const Contacts = styled.button`
     background-color: #d8127d;
     color: white;
   }
+  /* @media screen and (max-width: 500px) {
+    ma
+  } */
 `
 
 export const Title = styled.h1`
@@ -333,14 +346,22 @@ cursor: pointer;
     opacity: 1;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   }
-
+  &:focus{
+    outline:none;
+    opacity: 1;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
 
   @media screen and (max-width: 500px) {
     width: 300px;
-  height: 430px;
+    height: 430px;
+    margin-left: calc(50% - 150px);
+
   }
   @media screen and (max-width: 320px) {
-  width: 240px;
+  width: 270px;
   height: 380px;
+  margin-left: calc(50% - 135px);
+
   }
 `

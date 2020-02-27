@@ -23,16 +23,16 @@ const Footer = props => (
           />{' '}
           <p>forsmart_education</p>
         </Links>
-        <Links href="https://instagram.com">
+        <Links href="mailto:forsmart.education.gmail.com">
           <img src={require('./../../img/envelope.svg')} alt="Почта" />{' '}
-          <p>forsmart-edu@gmail.com</p>
+          <p>forsmart.education.gmail.com</p>
         </Links>
-        <Links href="https://instagram.com">
+        <Links href="tel:+79996924222">
           <img
             src={require('./../../img/whatsapp-logo-variant.svg')}
             alt="Телефон/WhatsApp"
           />{' '}
-          <p>8-(999)-692-42-22</p>
+          <p>+7-(999)-692-42-22</p>
         </Links>
       </Fade>
     </Text>

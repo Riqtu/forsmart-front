@@ -29,7 +29,11 @@ const Events = props => {
     { fields: { photo: { fields: { file: '' } } }, sys: {} }
   ])
   const [formActive, setFormActive] = useState(false)
+  const [course, setCourse] = useState('Нет курса')
   const [submit, setSubmit] = useState(false)
+  const [notEmptyName, setNotEmptyName] = useState(false)
+  const [notEmptyPhone, setNotEmptyPhone] = useState(false)
+
   useEffect(() => {
     async function fetchData() {
       await client
@@ -45,6 +49,37 @@ const Events = props => {
     }
     fetchData()
   }, [])
+
+  function setLocation(curLoc) {
+    try {
+      window.history.pushState(null, null, curLoc)
+      return
+    } catch (e) {}
+    window.location.hash = '#' + curLoc
+  }
+
+  const sub = () => {
+    if (document.getElementById('name').value !== '') {
+      setNotEmptyName(false)
+    }
+    if (document.getElementById('phone').value !== '') {
+      setNotEmptyPhone(false)
+    }
+    if (
+      document.getElementById('name').value !== '' &&
+      document.getElementById('phone').value !== ''
+    ) {
+      setSubmit(true)
+      setLocation('thanks')
+    } else {
+      if (document.getElementById('name').value === '') {
+        setNotEmptyName(true)
+      }
+      if (document.getElementById('phone').value === '') {
+        setNotEmptyPhone(true)
+      }
+    }
+  }
 
   let allPosts = data.map((el, index) => {
     const date = moment(data[index].fields.date).format('L')
@@ -63,18 +98,19 @@ const Events = props => {
           time={time}
           description={data[index].fields.description}
           adress={data[index].fields.adress}
+          youTube={data[index].fields.youTube}
           file={file}
           setFormActive={setFormActive}
           data={data}
           index={index}
+          setCourse={setCourse}
+          key={index}
         ></EventBlock>
       )
     } else {
       return (
         <Block key={index} style={style} file={file} id={index}>
-          <Title className="active" tabIndex="1">
-            {data[index].fields.title}
-          </Title>
+          <Title className="active">{data[index].fields.title}</Title>
           <Description>Coming Soon...</Description>
           <Adress>{data[index].fields.adress}</Adress>
         </Block>
@@ -94,6 +130,7 @@ const Events = props => {
         active={formActive}
         onClick={() => {
           setFormActive(!formActive)
+          setSubmit(false)
         }}
       >
         <Form
@@ -101,25 +138,40 @@ const Events = props => {
           method="post"
           target="formPost"
           id="form"
+          name="form"
           onClick={e => e.stopPropagation()}
         >
           <h1>Заполните данные</h1>
           <Input
             type="text"
-            name="fio"
-            placeholder="Укажите ФИО"
+            name="name"
+            placeholder="Укажите Имя"
+            id="name"
             active={submit}
+            notEmpty={notEmptyName}
           />
           <Input
             type="text"
-            name="email"
-            placeholder="Укажите e-mail"
+            name="phone"
+            placeholder="Укажите телефон"
+            id="phone"
             active={submit}
+            notEmpty={notEmptyPhone}
+          />
+          <Input
+            type="text"
+            name="course"
+            placeholder="Курс"
+            value={course}
+            active={submit}
+            readOnly
           />
           <Submit
             type="submit"
             value="Отправить"
-            onClick={() => setSubmit(true)}
+            onClick={() => {
+              sub()
+            }}
             active={submit}
           />
           <Thanks active={submit}>

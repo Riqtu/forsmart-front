@@ -47,7 +47,7 @@ let allPosts = data.teachers.map((el, index) => {
 
 const Teacher = props => {
   return (
-    <TeacherWrapper>
+    <TeacherWrapper id="Teach">
       <TeacherWrapperBLueBack />
       <TeacherWrapperMainBack />
       <Text>

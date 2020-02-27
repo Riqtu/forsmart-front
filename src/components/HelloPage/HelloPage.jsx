@@ -18,7 +18,7 @@ let Link = Scroll.Link
 
 const HelloPage = props => {
   return (
-    <HelloPageWrapper>
+    <HelloPageWrapper id="Main">
       <Circle
         size={557}
         top="-200px"
