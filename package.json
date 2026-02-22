@@ -5,7 +5,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "classnames": "^2.2.6",
-    "contentful": "^7.10.0",
+    "contentful": "^11.10.3",
     "moment": "^2.24.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
